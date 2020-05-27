@@ -1,0 +1,20 @@
+{
+  "name": "new-explorer-api",
+  "version": "1.0.0",
+  "description": "Backend of diploma",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonmakhnachev/news-explorer-api.git"
+  },
+  "author": "Anton Makhnachev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonmakhnachev/news-explorer-api/issues"
+  },
+  "homepage": "https://github.com/antonmakhnachev/news-explorer-api#readme"
+}
