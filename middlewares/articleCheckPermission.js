@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
 
   Article.findById(articleId).select('+owner')
     .orFail(() => {
-      throw new NotFoundError('Карточка не найдена');
+      throw new NotFoundError('Новость не найдена');
     })
     .then((article) => {
       if (!article.owner.equals(req.user._id)) {
