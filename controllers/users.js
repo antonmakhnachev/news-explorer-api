@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const { JWT_SECRET_KEY } = require('../config');
 
-
+// создание пользователя
 module.exports.createUser = (req, res, next) => {
   const {
     name, email, password,
@@ -18,6 +18,7 @@ module.exports.createUser = (req, res, next) => {
     .catch(next);
 };
 
+// получение данных пользователя
 module.exports.getUser = (req, res, next) => {
   const userId = req.user._id;
 
@@ -26,6 +27,8 @@ module.exports.getUser = (req, res, next) => {
     .catch(next);
 };
 
+
+// вход в систему
 module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
 
