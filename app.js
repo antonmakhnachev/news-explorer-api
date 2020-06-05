@@ -13,6 +13,7 @@ const routes = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { celebrateError } = require('./middlewares/checkCelebrateError');
 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -29,6 +30,7 @@ mongoose.connect(SERVER_CONNECT, {
 app.use(requestLogger);
 
 app.use(routes);
+
 
 app.use((req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
