@@ -6,4 +6,5 @@ module.exports.celebrateError = (err, req, res, next) => {
     const errorField = err.joi.details[0].context.key;
     throw new CelebrateError(`Некорректные данные в поле ${errorField}`);
   }
+  next(err);
 };

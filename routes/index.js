@@ -13,5 +13,4 @@ routes.use(auth);
 routes.use('/users', routerUsers);
 routes.use('/articles', routerArticles);
 
-
 module.exports = routes;
