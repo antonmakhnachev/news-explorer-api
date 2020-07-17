@@ -15,13 +15,14 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { celebrateError } = require('./middlewares/checkCelebrateError');
 
 const corsOptions = {
-  origin: ['http://localhost'],
+  origin: ['http://localhost:8080'],
   methods: 'GET, POST, PUT, DELETE, PATCH, HEAD',
   preflightContinue: false,
   optionsSuccessStatus: 204,
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type'],
   credentials: true,
-}
+};
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -38,7 +39,9 @@ mongoose.connect(SERVER_CONNECT, {
 
 app.use(requestLogger);
 
-app.use(routes, cors(corsOptions));
+app.use('*', cors(corsOptions));
+
+app.use(routes);
 
 app.use((req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
