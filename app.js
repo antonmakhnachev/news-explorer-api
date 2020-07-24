@@ -15,7 +15,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { celebrateError } = require('./middlewares/checkCelebrateError');
 
 const corsOptions = {
-  origin: ['http://localhost:8080', 'http://localhost:8081'],
+  origin: ['http://localhost:8080', 'http://localhost:8081', 'https://antonmakhnachev.github.io/news-explorer-frontend'],
   methods: 'GET, POST, PUT, DELETE, PATCH, HEAD',
   preflightContinue: false,
   optionsSuccessStatus: 204,
